@@ -4,10 +4,19 @@
 /* Basic Reset and Root Variables */
 :root {
     /* الألوان الرئيسية */
-    --primary-color: #34495E;
-    --accent-color: #c4a661;
-    --text-color: #2C3E50;
-    --background-light: #f9f9f9;
+    --primary-color: #2C3E50;
+    --secondary-color: #c4a661;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #1a1a1a;
+    
+    /* المسافات */
+    --section-padding: 80px 0;
+    --container-padding: 0 20px;
+    
+    /* الظلال */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     --spacing-unit: 2rem;
     --border-radius: 15px;
     --transition: all 0.3s ease;
@@ -17,7 +26,6 @@
     --accent-gradient: linear-gradient(45deg, #d4af37, #b89018);
     --glass-effect: rgba(255, 255, 255, 0.95);
     --glass-border: 1px solid rgba(255, 255, 255, 0.2);
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -34,7 +42,7 @@ body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--background-light);
+    background: var(--light-bg);
     font-size: 16px;
     text-align: right;
     overflow-x: hidden;
@@ -50,17 +58,16 @@ h1, h2, h3, h4, h5, h6, nav a, .logo{
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-unit);
+    padding: var(--container-padding);
 }
 /* Header */
 header {
-    background-color: #2C3E50 !important; /* لون ثابت داكن مع !important */
-    padding: 15px 0;
+    background: var(--primary-color);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* إزالة تأثيرات التمرير */
@@ -80,7 +87,7 @@ header.scrolled .logo-container {
     justify-content: space-between;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 15px 0;
     background: transparent !important;
 }
 
@@ -198,18 +205,18 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--accent-color) !important;
+    color: var(--secondary-color) !important;
     background: rgba(196, 166, 97, 0.1);
 }
 
 /* زر تغيير اللغة */
 .language-btn {
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .language-btn:hover {
-    background: var(--accent-color);
+    background: var(--secondary-color);
     color: var(--primary-color);
 }
 
@@ -277,52 +284,40 @@ nav ul li a:hover {
 }
 
 /* Header/Hero */
-.hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('Assets/hero-background.png');
+.hero-section {
+    height: 100vh;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
+    text-align: center;
     position: relative;
-    overflow: hidden;
+    color: white;
+    padding-top: 80px;
 }
 
-.hero::before {
+.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.6));
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
     position: relative;
-    text-align: center;
+    z-index: 1;
     max-width: 800px;
-    padding: 3rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    transform: translateY(20px);
-    animation: floatIn 1s ease forwards;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-title {
-    font-size: 4.5rem;
-    font-weight: 700;
-    color: #2C3E50;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 15px;
-    animation: fadeInDown 1s ease-out;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title::after {
@@ -352,7 +347,7 @@ nav ul li a:hover {
 /* تحسين العرض على الشاشات الصغيرة */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -364,7 +359,7 @@ nav ul li a:hover {
 
 .hero h2 {
     font-size: 2.5rem;
-    color: var(--accent-color);
+    color: var(--secondary-color);
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-weight: 600;
@@ -381,9 +376,9 @@ nav ul li a:hover {
 .hero .cta-button {
     font-size: 1.2rem;
     padding: 1rem 3rem;
-    background: var(--accent-color);
+    background: var(--secondary-color);
     color: white;
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -394,7 +389,7 @@ nav ul li a:hover {
 
 .hero .cta-button:hover {
     background: transparent;
-    color: var(--accent-color);
+    color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -426,12 +421,12 @@ nav ul li a:hover {
     from {
         text-shadow: 0 0 5px #fff, 
                      0 0 10px #fff, 
-                     0 0 15px var(--accent-color);
+                     0 0 15px var(--secondary-color);
     }
     to {
         text-shadow: 0 0 10px #fff, 
                      0 0 20px #fff, 
-                     0 0 30px var(--accent-color);
+                     0 0 30px var(--secondary-color);
     }
 }
 
@@ -457,8 +452,8 @@ nav ul li a:hover {
 
 /* Sections */
 .section {
-    padding: 80px 0;
-    background: var(--background-light);
+    padding: var(--section-padding);
+    background: var(--light-bg);
     margin: 2rem 0;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
@@ -547,45 +542,27 @@ nav ul li a:hover {
 .collections-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 3rem;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .collection {
     background: white;
     border-radius: 15px;
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
-    position: relative;
     overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 1000px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
 }
 
-.collection::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent-gradient);
-    opacity: 0;
-    transition: all 0.5s ease;
-    z-index: -1;
-}
-
-.collection:hover::before {
-    opacity: 0.1;
-    transform: scale(1.05);
+.collection:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
 }
 
 .collection img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.collection:hover img {
-    transform: scale(1.1) translateY(-10px);
 }
 
 .collection h3 {
@@ -602,8 +579,8 @@ nav ul li a:hover {
     display: inline-block;
     padding: 1rem 2.5rem;
     background: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     border-radius: 30px;
     font-weight: bold;
     transition: var(--transition);
@@ -613,7 +590,7 @@ nav ul li a:hover {
 }
 
 .collection-cta:hover {
-    background: var(--accent-color);
+    background: var(--secondary-color);
     color: white;
     transform: translateY(-3px);
 }
@@ -636,7 +613,7 @@ nav ul li a:hover {
     gap: 1rem;
 }
 .visit-info strong{
-    color: var(--accent-color);
+    color: var(--secondary-color);
     min-width: 150px;
 }
 .visit-info iframe{
@@ -660,14 +637,16 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 /* news section */
-.news-container{
+.news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 .news-card{
     background: white;
     border-radius: 15px;
+    overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
     text-align: center;
@@ -676,7 +655,7 @@ nav ul li a:hover {
 }
 .news-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
+    box-shadow: var(--hover-shadow);
 }
 .news-card img{
     width: 100%;
@@ -699,15 +678,15 @@ nav ul li a:hover {
     display: inline-block;
     padding: 1rem 2.5rem;
     border-radius: 30px;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     font-weight: bold;
     transition: var(--transition);
     margin-top: 10px;
 }
 .read-more:hover{
     color: white;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
 }
 /* support section */
 #support{
@@ -749,7 +728,7 @@ nav ul li a:hover {
 /* Footer */
 footer {
     background: var(--primary-gradient);
-    color: var(--background-light);
+    color: var(--light-bg);
     padding: 60px 0 20px;
     text-align: center;
 }
@@ -768,7 +747,7 @@ footer {
 }
 
 .footer-section h4 {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     font-family: 'Aref Ruqaa', serif;
@@ -787,7 +766,7 @@ footer {
 }
 
 .footer-section p {
-    color: var(--background-light);
+    color: var(--light-bg);
     margin-bottom: 1rem;
     line-height: 1.8;
 }
@@ -805,8 +784,8 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: var(--accent-color);
-    color: var(--background-light);
+    background: var(--secondary-color);
+    color: var(--light-bg);
     border-radius: 50%;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -858,7 +837,7 @@ footer {
 
     /* تحسين الهيدر للموبايل */
     .header-container {
-        padding: 0.5rem var(--spacing-unit);
+        padding: 10px 20px;
     }
 
     .logo img {
@@ -943,7 +922,7 @@ footer {
     }
 
     /* تحسين قسم الأخبار للموبايل */
-    .news-container {
+    .news-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1077,7 +1056,7 @@ header.scrolled {
     z-index: -1;
     opacity: 0.1;
     background: 
-        radial-gradient(circle at 0% 0%, var(--accent-color) 0%, transparent 50%),
+        radial-gradient(circle at 0% 0%, var(--secondary-color) 0%, transparent 50%),
         radial-gradient(circle at 100% 100%, var(--primary-color) 0%, transparent 50%);
     animation: backgroundMove 20s ease infinite alternate;
 }
@@ -1097,8 +1076,8 @@ header.scrolled {
 
 .language-btn {
     background: transparent;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
@@ -1108,7 +1087,7 @@ header.scrolled {
 }
 
 .language-btn:hover {
-    background: var(--accent-color);
+    background: var(--secondary-color);
     color: var(--primary-color);
     transform: translateY(-2px);
 }
@@ -1122,10 +1101,10 @@ header.scrolled {
 }
 
 .sitemap-category h3 {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .sitemap-category ul {
@@ -1144,7 +1123,7 @@ header.scrolled {
 }
 
 .sitemap-category a:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 /* أنماط صفحة الفعاليات */
@@ -1190,7 +1169,7 @@ header.scrolled {
 
 .event-card.modern:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
+    box-shadow: var(--hover-shadow);
 }
 
 .event-date-badge {
