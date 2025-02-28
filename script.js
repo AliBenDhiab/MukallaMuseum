@@ -212,3 +212,31 @@ function setActiveLink() {
 
 // تشغيل الوظيفة عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', setActiveLink);
+
+// التحكم في القائمة الجانبية
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const sidebar = document.querySelector('.sidebar');
+const sidebarOverlay = document.querySelector('.sidebar-overlay');
+const closeSidebar = document.querySelector('.close-sidebar');
+
+// فتح القائمة
+sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    sidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+// إغلاق القائمة
+function closeSidebarMenu() {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+closeSidebar.addEventListener('click', closeSidebarMenu);
+sidebarOverlay.addEventListener('click', closeSidebarMenu);
+
+// إغلاق القائمة عند النقر على الروابط
+document.querySelectorAll('.sidebar-nav a').forEach(link => {
+    link.addEventListener('click', closeSidebarMenu);
+});
