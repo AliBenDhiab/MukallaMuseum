@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متحف المكلا: إرث سلاطين القعيطي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home">
+                    <div class="logo-container">
+                        <img src="assets/logo.jpg" alt="شعار متحف المكلا" class="logo-image">
+                        <div class="logo-glow"></div>
+                    </div>
+                </a>
+            </div>
+            <button class="mobile-menu" aria-label="القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home" data-translate="home">الرئيسية</a></li>
+                    <li><a href="#collections" data-translate="collections">المجموعات</a></li>
+                    <li><a href="#news" data-translate="news">الأخبار</a></li>
+                    <li><a href="#visit" data-translate="visit">خطط لزيارتنا</a></li>
+                    <li><a href="#support" data-translate="support">ادعم المتحف</a></li>
+                    <li><a href="#events" data-translate="events">الفعاليات</a></li>
+                    <li><a href="#sitemap" data-translate="sitemap">خريطة الموقع</a></li>
+                </ul>
+                <button class="language-btn" onclick="toggleLanguage()">
+                    <span data-translate="language">English</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title" data-translate="heroTitle">متحف المكلا</h1>
+            <h2 data-translate="heroSubtitle">إرث سلاطين القعيطي</h2>
+            <p data-translate="heroDescription">اكتشف تاريخ وتراث حضرموت في متحف المكلا</p>
+            <a href="#collections" class="cta-button" data-translate="exploreButton">استكشف المجموعات</a>
+        </div>
+    </section>
+
+    <!-- قسم المجموعات -->
+    <section class="collections section" id="collections">
+        <div class="container">
+            <h2 data-translate="collectionsTitle">المجموعات</h2>
+            <div class="collections-grid">
+                <article class="collection">
+                    <img src="assets/placeholder.png" alt="مكتشفات أثرية">
+                    <h3 data-translate="archaeologicalTitle">المكتشفات الأثرية</h3>
+                    <p data-translate="archaeologicalDesc">مجموعة من القطع الأثرية النادرة التي تم اكتشافها في حضرموت</p>
+                    <a href="#" class="collection-cta" data-translate="readMore">اقرأ المزيد</a>
+                </article>
+                <article class="collection">
+                    <img src="assets/placeholder2.jpg" alt="سلطنة القعيطي">
+                    <h3 data-translate="quaitiTitle">مقتنيات سلطنة القعيطي</h3>
+                    <p data-translate="quaitiDesc">مجموعة من المقتنيات الملكية التي تعود لسلطنة القعيطي</p>
+                    <a href="#" class="collection-cta" data-translate="readMore">اقرأ المزيد</a>
+                </article>
+                <article class="collection">
+                    <img src="assets/placeholder6.png" alt="حضرموت">
+                    <h3 data-translate="cultureTitle">ثقافة حضرموت</h3>
+                    <p data-translate="cultureDesc">تعرف على التراث الثقافي الغني لحضرموت من خلال المعروضات التقليدية</p>
+                    <a href="#" class="collection-cta" data-translate="viewMore">عرض المزيد</a>
+                </article>
+                <article class="collection">
+                    <img src="assets/placeholder7.png" alt="حضرموت">
+                    <h3 data-translate="historyTitle">تاريخ حضرموت</h3>
+                    <p data-translate="historyDesc">تعرف على تاريخ حضرموت العريق من خلال المتحف</p>
+                    <a href="#" class="collection-cta" data-translate="viewMore">عرض المزيد</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأخبار -->
+    <section class="news section" id="news">
+        <div class="container">
+            <h2 data-translate="newsTitle">آخر الأخبار</h2>
+            <div class="news-container">
+                <article class="news-card">
+                    <img src="assets/placeholder.png" alt="news image">
+                    <h3 data-translate="newsArticle1Title">اكتشاف قطع أثرية جديدة</h3>
+                    <p data-translate="newsArticle1Desc">تم اكتشاف مجموعة من القطع الأثرية النادرة في حضرموت...</p>
+                    <a href="#" class="read-more" data-translate="readMore">اقرأ المزيد</a>
+                </article>
+                <article class="news-card">
+                    <img src="assets/placeholder2.jpg" alt="news image">
+                    <h3 data-translate="newsArticle2Title">معرض الفن التقليدي</h3>
+                    <p data-translate="newsArticle2Desc">يقيم المتحف معرضاً للفن التقليدي الحضرمي...</p>
+                    <a href="#" class="read-more" data-translate="readMore">اقرأ المزيد</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم خطط لزيارتنا -->
+    <section class="visit section" id="visit">
+        <div class="container">
+            <h2 data-translate="visitTitle">خطط لزيارتنا</h2>
+            <div class="visit-info">
+                <p data-translate="openingHours"><strong>مواعيد الزيارة:</strong> من الأحد إلى الخميس، 9 صباحاً - 5 مساءً</p>
+                <p data-translate="address"><strong>العنوان:</strong> المكلا، محافظة حضرموت</p>
+                <p data-translate="ticketPrices"><strong>تذاكر الدخول:</strong> 500 ريال للكبار، 200 ريال للأطفال</p>
+                <p data-translate="inquiry"><strong>للاستفسار:</strong> +967-XXX-XXXXXX</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدعم -->
+    <section class="support section" id="support">
+        <div class="container">
+            <h2 data-translate="supportTitle">ادعم المتحف</h2>
+            <p data-translate="supportDesc">ساهم في الحفاظ على تراثنا وتاريخنا من خلال دعم المتحف</p>
+            <a href="#" class="support-cta" data-translate="donateButton">تبرع الآن</a>
+        </div>
+    </section>
+
+    <!-- قسم الفعاليات -->
+    <section class="events-section section" id="events">
+        <div class="container">
+            <h2 class="section-title" data-translate="eventsTitle">الفعاليات القادمة</h2>
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card modern">
+                    <div class="event-date-badge">
+                        <span class="day" data-translate="day15">15</span>
+                        <span class="month" data-translate="monthJune">يونيو</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 data-translate="event1.title">معرض الفن التقليدي</h3>
+                        <div class="event-details">
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                <span class="label" data-translate="eventTime">الوقت:</span>
+                                <span data-translate="event1.time">4:00 مساءً</span>
+                            </span>
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="label" data-translate="eventLocation">المكان:</span>
+                                <span data-translate="event1.location">القاعة الرئيسية</span>
+                            </span>
+                        </div>
+                        <p class="event-description">
+                            <span class="label" data-translate="eventDescription">الوصف:</span>
+                            <span data-translate="event1.description">معرض فني يستعرض روائع الفن التقليدي الحضرمي، مع عرض حي للفنانين المحليين</span>
+                        </p>
+                        <button class="book-event-btn" data-translate="bookNow">احجز مقعدك</button>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card modern">
+                    <div class="event-date-badge">
+                        <span class="day" data-translate="day20">20</span>
+                        <span class="month" data-translate="monthJune">يونيو</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 data-translate="event2.title">ورشة الخط العربي</h3>
+                        <div class="event-details">
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                <span class="label" data-translate="eventTime">الوقت:</span>
+                                <span data-translate="event2.time">10:00 صباحاً</span>
+                            </span>
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="label" data-translate="eventLocation">المكان:</span>
+                                <span data-translate="event2.location">قاعة الورش</span>
+                            </span>
+                        </div>
+                        <p class="event-description">
+                            <span class="label" data-translate="eventDescription">الوصف:</span>
+                            <span data-translate="event2.description">ورشة تعليمية في فن الخط العربي مع الخطاط المعروف أحمد السقاف</span>
+                        </p>
+                        <button class="book-event-btn" data-translate="bookNow">احجز مقعدك</button>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card modern">
+                    <div class="event-date-badge">
+                        <span class="day" data-translate="day25">25</span>
+                        <span class="month" data-translate="monthJune">يونيو</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 data-translate="event3.title">معرض التراث الحضرمي</h3>
+                        <div class="event-details">
+                            <span class="event-time">
+                                <i class="fas fa-clock"></i>
+                                <span class="label" data-translate="eventTime">الوقت:</span>
+                                <span data-translate="event3.time">5:00 مساءً</span>
+                            </span>
+                            <span class="event-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="label" data-translate="eventLocation">المكان:</span>
+                                <span data-translate="event3.location">صالة العرض</span>
+                            </span>
+                        </div>
+                        <p class="event-description">
+                            <span class="label" data-translate="eventDescription">الوصف:</span>
+                            <span data-translate="event3.description">معرض يوثق التراث الحضرمي الأصيل مع عروض حية للحرف التقليدية</span>
+                        </p>
+                        <button class="book-event-btn" data-translate="bookNow">احجز مقعدك</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم خريطة الموقع -->
+    <section class="sitemap-section section" id="sitemap">
+        <div class="container">
+            <h2 data-translate="sitemapTitle">خريطة الموقع</h2>
+            <div class="sitemap-grid">
+                <div class="sitemap-category">
+                    <h3 data-translate="mainPagesTitle">الصفحات الرئيسية</h3>
+                    <ul>
+                        <li><a href="#home" data-translate="home">الرئيسية</a></li>
+                        <li><a href="#collections" data-translate="collections">المجموعات</a></li>
+                        <li><a href="#news" data-translate="news">الأخبار</a></li>
+                        <li><a href="#visit" data-translate="visit">خطط لزيارتنا</a></li>
+                        <li><a href="#support" data-translate="support">ادعم المتحف</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-category">
+                    <h3 data-translate="collectionsMenuTitle">المجموعات</h3>
+                    <ul>
+                        <li><a href="#collections" data-translate="archaeologicalTitle">المكتشفات الأثرية</a></li>
+                        <li><a href="#collections" data-translate="quaitiTitle">مقتنيات سلطنة القعيطي</a></li>
+                        <li><a href="#collections" data-translate="cultureTitle">ثقافة حضرموت</a></li>
+                        <li><a href="#collections" data-translate="historyTitle">تاريخ حضرموت</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-category">
+                    <h3 data-translate="eventsActivitiesTitle">الفعاليات والأنشطة</h3>
+                    <ul>
+                        <li><a href="#events" data-translate="eventsTitle">الفعاليات القادمة</a></li>
+                        <li><a href="#events" data-translate="tempExhibitions">المعارض المؤقتة</a></li>
+                        <li><a href="#events" data-translate="workshops">ورش العمل</a></li>
+                        <li><a href="#events" data-translate="eventBooking">حجز الفعاليات</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-translate="contactUs">تواصل معنا</h4>
+                    <p data-translate="addressFooter">المكلا، محافظة حضرموت</p>
+                    <p data-translate="phoneFooter">هاتف: +967-XXX-XXXXXX</p>
+                    <p data-translate="emailFooter">البريد الإلكتروني: info@almukallamuseum.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="workingHoursTitle">ساعات العمل</h4>
+                    <p data-translate="workingDays">من الأحد إلى الخميس</p>
+                    <p data-translate="workingTime">9 صباحاً - 5 مساءً</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="followUs">تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="copyright">&copy; <span id="year"></span> متحف المكلا: إرث سلاطين القعيطي - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
