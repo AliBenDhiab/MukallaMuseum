@@ -1,10 +1,15 @@
 [build]
   base = "/"
-  publish = "/"
+  publish = "."
   command = "#"
 
 [build.environment]
   NODE_VERSION = "14"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
 
 [[redirects]]
   from = "/*"
